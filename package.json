@@ -1,11 +1,16 @@
 {
-	"name": "n8n-nodes-<...>",
+	"name": "n8n-nodes-azure-cohere-rerank",
 	"version": "0.1.0",
-	"description": "",
+	"description": "Azure-hosted Cohere Rerank (AI Reranker-compatible) node for n8n",
 	"license": "MIT",
-	"homepage": "",
+	"homepage": "https://github.com/le-dawg/n8n-nodes-starter-gevo",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"azure",
+		"cohere",
+		"rerank",
+		"ai",
+		"ai-reranker"
 	],
 	"author": {
 		"name": "",
@@ -13,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "https://github.com/le-dawg/n8n-nodes-starter-gevo.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -22,7 +27,8 @@
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
+		"prepublishOnly": "n8n-node prerelease",
+		"test": "jest"
 	},
 	"files": [
 		"dist"
@@ -31,19 +37,21 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/GithubIssuesApi.credentials.js",
-			"dist/credentials/GithubIssuesOAuth2Api.credentials.js"
+			"dist/credentials/AzureCohereRerankApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/GithubIssues/GithubIssues.node.js",
-			"dist/nodes/Example/Example.node.js"
+			"dist/nodes/AzureCohereRerank/AzureCohereRerank.node.js"
 		]
 	},
 	"devDependencies": {
 		"@n8n/node-cli": "*",
 		"eslint": "9.32.0",
+		"jest": "^29.7.0",
+		"jest-mock-extended": "^4.0.0",
 		"prettier": "3.6.2",
+		"ts-jest": "^29.3.2",
 		"release-it": "^19.0.4",
+		"@types/jest": "^29.5.14",
 		"typescript": "5.9.2"
 	},
 	"peerDependencies": {

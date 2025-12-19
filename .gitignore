@@ -1,2 +1,5 @@
 dist
 node_modules
+speed.json
+.DS_Store
+../.DS_Store
